@@ -22,7 +22,7 @@ The following **optional** features are implemented:
 * [ ] User can add "tags" to a post, and filter posts by tag. 
 * [ ] There is a "navbar" that is responsive to window size similar to http://v4-alpha.getbootstrap.com/examples/navbar/. **NOTE**: This is currently buggy in Bootstrap v4 Alpha. For a workaround, look at the CodePen associater dhere: https://github.com/twbs/bootstrap/issues/18263. 
 * [ ] User can see how many views a post has. 
-* [ ] User can leave a comment on a post.
+* [x] User can leave a comment on a post.
 
 The following **additional** features are implemented:
 
@@ -32,7 +32,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](http://i.imgur.com/link/to/your/gif/file.gif)
+![Video Walkthrough](file.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
