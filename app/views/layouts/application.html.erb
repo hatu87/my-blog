@@ -1,14 +1,101 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Blog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+    <head>
+        <title>Blog</title>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+    </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Blog Template</title>
+        <meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!--<link href="css/bootstrap.min.css" rel="stylesheet">
+                                                                                    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <!--<link href="css/styles.css" rel="stylesheet">-->
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        
+        <%= javascript_include_tag 'application' %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <nav class="navbar navbar-light navbar-static-top bd-navbar">
+                <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+                &#9776;
+                </button>
+                <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <%= link_to 'Write blog', new_article_path(), class: "btn btn-primary-outline",
+                            method: :get%>
+                        </li>
+                    </ul>
+                    <%= form_tag(search_articles_path, method: 'get', class: 'form-inline navbar-form pull-right') do %>
+                      <%= text_field_tag :q, nil, placeholder: "Enter your title here", class: "form-control" %>
+                      <%= submit_tag "Search", class: "btn btn-info-outline" %>
+                    <% end %>
+                    
+                </div>
+            </nav>
+        </div>
+        <div class="bd-pageheader text-xs-center text-sm-left">
+            <div class="container">
+                <h1>Tu Hoang's Blog</h1>
+                <p class="lead">
+                This is my new blog
+                </p>
+
+            </div>
+        </div>
+        
+            <%= yield %>
+            <hr>
+            <div class="container" id="footer">
+                <div class="row">
+                    <div class="col col-sm-12">
+                        <h1>Follow Us</h1>
+                        <div class="btn-group">
+                            <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+                            <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+                            <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="list-inline">
+                                <li><i class="icon-facebook icon-2x"></i></li>
+                                <li><i class="icon-twitter icon-2x"></i></li>
+                                <li><i class="icon-google-plus icon-2x"></i></li>
+                                <li><i class="icon-pinterest icon-2x"></i></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </body>
+    </html>
