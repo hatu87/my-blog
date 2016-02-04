@@ -1,29 +1,45 @@
 <div class="row">
-    <br>
-    <div class="col-md-2 col-sm-3 text-center">
-        <a class="story-img" href="#"><img src="//placehold.it/100" style="width:100px;height:100px" class="img-circle"></a>
-    </div>
-    <div class="col-md-10 col-sm-9">
-        <h3><%= article.title %></h3>
+    <!-- <br> -->
+    <div class="col-md-12">
+
         <div class="row">
-            <div class="col-xs-9">
+            <div class="col-md-12">
+                <h2><%= article.title %></h2>
+
+                <p class="">
+                    by <a href="index.php">Start Bootstrap</a>
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
+                <hr>
                 <p> <%= @markdown.render(article.body).html_safe %> </p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                
                 <p class="lead">
-                <%= link_to 'Edit', edit_article_path(article), class: "btn btn-warning" %>
-                <%= link_to 'Delete', article_path(article), class: "btn btn-danger",
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %>
+                    <%= link_to 'Edit', edit_article_path(article), class: "btn btn-warning" %>
+                    <%= link_to 'Delete', article_path(article), class: "btn btn-danger",
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
                 </p>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                
+            </div>
+        </div>
+        <div class="row">
             <div class="row">
                 <div class="col-xs-9">
-                    <!--/stories-->
                     <% article.comments.each do |comment| %>
                     <div>
                         <div><a><i class="fa fa-user"></i>&nbsp;<%=comment.user%></a>&nbsp;<%=comment.comment%></div>
                     </div>
                     <% end %>
-                    <!--/stories-->
+                    
                 </div>
             </div>
             <div class="row">
@@ -42,6 +58,7 @@
                 </div>
             </div>
         </div>
+        
         <br><br>
     </div>
 </div>
