@@ -19,14 +19,15 @@ The following **required** functionality is complete:
 The following **optional** features are implemented:
 * [x] User can delete stories, with an alert that asks the user to confirm.
 * [x] User can enter a search term and see all posts with titles that contain the search term.
-* [ ] User can add "tags" to a post, and filter posts by tag. 
+* [x] User can add "tags" to a post, and filter posts by tag. 
 * [x] There is a "navbar" that is responsive to window size similar to http://v4-alpha.getbootstrap.com/examples/navbar/. **NOTE**: This is currently buggy in Bootstrap v4 Alpha. For a workaround, look at the CodePen associater dhere: https://github.com/twbs/bootstrap/issues/18263. 
 * [x] User can see how many views a post has. 
 * [x] User can leave a comment on a post.
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] View the number of comments
+- [x] Allow add tag by typing in the tags textbox (use tab or , to type another tag)
 
 ## Video Walkthrough 
 
