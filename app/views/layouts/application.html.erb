@@ -36,7 +36,7 @@
                         </li>
                     </ul>
                     <%= form_tag(search_articles_path, method: 'get', class: 'form-inline navbar-form pull-right') do %>
-                    <%= text_field_tag :q, nil, placeholder: "Enter your title here", class: "form-control" %>
+                    <%= text_field_tag :q, nil, placeholder: "Enter your tag here", class: "form-control" %>
                     <%= submit_tag "Search", class: "btn btn-info-outline" %>
                     <% end %>
                 </div>
