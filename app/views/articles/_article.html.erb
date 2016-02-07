@@ -1,19 +1,42 @@
-<div class="row">
-    <!-- <br> -->
-    <div class="col-md-12">
+<div class="col-md-12">
+<div class="card">
 
+    <img class="card-img-top" style="width:100%; height:350" data-src="..." src="<%= asset_path( 'image-placeholder.png' ) %>" alt="Card image cap">
+    <div class="card-block">
+    <h4 class="card-title">
+        <%= article.title %>
+    </h4>
+    <p class="card-text"><%= article.body %></p>
+    <%= link_to 'Read more', article_path(article), class: "btn btn-info" %>
+    </div>
+    <div class="card-block">
+    <p class="card-text">
+                <% article.tags_list.each do |tag| %>
+                <span class="label label-pill label-success"><%=tag%></span>
+                <% end %>
+            </p>
+        <span>Posted on <%= article.created_at.to_s(:short) %></span>
+        <span style="padding-left: 20px" ><%= article.view_count %> <i style="vertical-align: middle" class="material-icons md-18">remove_red_eye</i></span>
+        <span style="padding-left: 10px" ><%= article.comments_count %> <i style="vertical-align: middle" class="material-icons md-18">chat_bubble_outline</i></span>
+    </div>
+</div>
+    
+    
+</div>
+<!--
+<div class="row">
+    
+    <div class="col-md-12">
         <div class="row">
             <div class="col-md-12">
                 <h2><%= article.title %></h2>
-
-                <p class="">
+                <p class="lead">
                     by <a href="index.php">Start Bootstrap</a>
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
                 <hr>
                 <p> <%= @markdown.render(article.body).html_safe %> </p>
             </div>
-
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -26,11 +49,7 @@
                 </p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                
-            </div>
-        </div>
+        
         <div class="row">
             <div class="row">
                 <div class="col-xs-9">
@@ -62,4 +81,4 @@
         <br><br>
     </div>
 </div>
-<hr/>
+<hr/> -->

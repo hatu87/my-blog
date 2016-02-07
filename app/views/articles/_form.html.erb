@@ -25,6 +25,8 @@
     </fieldset>
     <fieldset class="form-group">
         <%= f.label :tags %>
+        <!-- Button trigger modal -->
+        <%= f.text_field :tag_list, 'data-role'=>'tagsinput' %>
     </fieldset>
     <%= f.submit "Save", :class => "btn btn-primary" %>
     

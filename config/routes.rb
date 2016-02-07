@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :articles do
     collection do
       get "search", :action => "search", :as => "search"
+      get "show", :action => "show", :as => "show"
     end
     resources :comment
   end

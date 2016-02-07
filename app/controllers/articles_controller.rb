@@ -11,6 +11,11 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @article = Article.find(params[:id])
+
+    # update view count
+    @article.view_count = @article.view_count + 1
+    @article.save
   end
 
   # GET /articles/new
@@ -20,6 +25,14 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    @article = Article.find(params[:id])
+    # @tagsString = @article.tags.join(",")
+    @tagsString = ""
+    @article.tags.each do |tag|
+      @tagsString = @tagsString + tag.name + ","
+    end
+
+    @tagsString = @tagsString.chop
   end
 
   # POST /articles
@@ -43,6 +56,8 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
+        puts params[:tag_list]
+        @article.tags.build
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
@@ -67,8 +82,12 @@ class ArticlesController < ApplicationController
   end
 
   def search 
-    @articles = Article.search(params[:q])
+    @articles = Article.search_tag(params[:q])
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+  end
+
+  def search_tag
+    @articles = Article.search(params(:q))
   end
 
   private
@@ -79,6 +98,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :body)
+      params.require(:article).permit(:title, :body, :tag_list)
     end
 end

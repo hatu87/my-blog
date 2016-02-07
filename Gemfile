@@ -34,6 +34,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap', '~> 4.0.0.alpha1'
 gem 'redcarpet'
 gem "font-awesome-rails"
+gem 'material_icons'
+gem 'rails-assets-tether', '>= 1.1.0'
+gem 'bootstrap-tagsinput-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
