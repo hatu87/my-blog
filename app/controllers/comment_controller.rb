@@ -10,6 +10,6 @@ class CommentController < ArticlesController
     
     comment.save
     
-    redirect_to controller: :articles, action: :index
+    redirect_to controller: :articles, action: :show, id: params[:article_id]
   end
 end
